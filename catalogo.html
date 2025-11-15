@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catalogo - Kronos Technology</title>
+  <link rel="stylesheet" href="css/catalogo.css" />
+  <link rel="icon" href="./img/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="img/logo.png" alt="Logo KronosTech" class="logo-img">
+        KronosTech
+      </div>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="menu" id="nav-menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="quienes.html">Quiénes Somos</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="carrito.html">Carrito (<span id="contador-carrito">0</span>)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main>
+    <h1>Nuestro Catálogo</h1>
+
+    <div class="product-grid">
+
+      <div class="product-card" data-price="59990">
+        <img src="img/auraPods-MidnightBlack.jpg" alt="AuraPods" class="product-image" id="p1-img" />
+        <h3>AuraPods</h3>
+        <p>Sonido envolvente con cancelación activa de ruido.</p>
+        <p class="product-price">$59.990</p>
+
+        <div class="color-options">
+          <span class="color-circle" style="background-color:#000000;" data-image="img/auraPods-MidnightBlack.jpg"
+            data-product="p1-img"></span>
+          <span class="color-circle" style="background-color:#ffffff; border:1px solid #ccc;"
+            data-image="img/auraPods-PureWhite.jpg" data-product="p1-img"></span>
+        </div>
+        <button class="add-to-cart">Agregar al carrito</button>
+      </div>
+
+      <div class="product-card" data-price="89990">
+        <img src="img/headset-black.png" alt="Headset Pro" class="product-image" id="p2-img" />
+        <h3>Headset Pro</h3>
+        <p>Audio potente con micrófono retráctil y diseño ergonómico.</p>
+        <p class="product-price">$89.990</p>
+
+        <div class="color-options">
+          <span class="color-circle" style="background-color:#000000;" data-image="img/headset-black.png"
+            data-product="p2-img"></span>
+          <span class="color-circle" style="background-color:#fdfdfd; border:1px solid #ccc;"
+            data-image="img/headset-White.png" data-product="p2-img"></span>
+        </div>
+
+        <button class="add-to-cart">Agregar al carrito</button>
+      </div>
+
+      <div class="product-card" data-price="74990">
+        <img src="img/moodBeats SportSense-ObsidianBlack.jpg" alt="MoodBeats SportSense" class="product-image"
+          id="p3-img" />
+        <h3>MoodBeats SportSense</h3>
+        <p>Diseño deportivo, resistente al agua y con sensor táctil.</p>
+        <p class="product-price">$74.990</p>
+
+        <div class="color-options">
+          <span class="color-circle" style="background-color:#000000;"
+            data-image="img/moodBeats SportSense-ObsidianBlack.jpg" data-product="p3-img"></span>
+          <span class="color-circle" style="background-color:#ffffff; border:1px solid #ccc;"
+            data-image="img/moodBeats SportSense-ArticWhite.jpg" data-product="p3-img"></span>
+          </div>
+        <button class="add-to-cart">Agregar al carrito</button>
+      </div>
+
+      <div class="product-card" data-price="109990">
+        <img src="img/serenity-pro-MidnightBlue.jpg" alt="Serenity Pro" class="product-image" id="p4-img" />
+        <h3>Serenity Pro</h3>
+        <p>Experiencia premium con cancelación avanzada de ruido.</p>
+        <p class="product-price">$109.990</p>
+
+        <div class="color-options">
+          <span class="color-circle" style="background-color:#1a2740;" data-image="img/serenity-pro-MidnightBlue.jpg"
+            data-product="p4-img"></span>
+          <span class="color-circle" style="background-color:#b11226;" data-image="img/serenity-pro-CrimsonRed.jpg"
+            data-product="p4-img"></span>
+          <span class="color-circle" style="background-color:#00563b;" data-image="img/serenity-pro-EmeraldGreen.jpg"
+            data-product="p4-img"></span>
+          </div>
+        <button class="add-to-cart">Agregar al carrito</button>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="./js/catalogo.js"></script>
+  <script src="./js/script.js"></script>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+
+      <div class="footer-column">
+        <h3 data-key="footer-media">Redes Sociales</h3>
+        <div class="social-icons">
+          <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok">
+            <i class="fab fa-tiktok"></i>
+          </a>
+        </div>
+      </div>
+
+
+      <div class="footer-column">
+        <h3 data-key="footer-payments">Medios de Pago</h3>
+        <div class="payment-icons">
+          <img src="img/americanexpress-logo.png" alt="American Express">
+          <img src="img/visa-logo.png" alt="Visa">
+          <img src="img/mastercard-logo.webp" alt="Mastercard">
+          <img src="img/mercadopago-logo.png" alt="Mercado Pago">
+        </div>
+      </div>
+      <div class="footer-column">
+        <h3 data-key="footer-contact">Contactanos</h3>
+        <ul class="contact-info">
+          <li><i class="fas fa-phone"></i> 54 9 11 0000-0000</li>
+          <li><i class="fas fa-envelope"></i> info@kronostech.com</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Kronos Technology. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+   <script src="./js/script.js"></script>
+  <script src="./js/catalogo.js"></script>
+</body>
+
+</html>

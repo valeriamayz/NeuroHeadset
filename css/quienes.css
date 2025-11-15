@@ -1,0 +1,407 @@
+/* colores principales */
+:root {
+  --azul-marino: #001F3F;
+  --dorado: #D4AF37;
+  --negro: #000000;
+  --blanco: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--azul-marino);
+  color: var(--blanco);
+}
+
+/*navbar*/
+.navbar {
+  background-color: var(--negro);
+  color: var(--blanco);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--dorado);
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.logo-img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  padding: 8px 14px;
+  border-radius: 4px;
+}
+
+.menu a:hover {
+  background: var(--dorado);
+  color: var(--negro);
+}
+
+/* botón de hamburguesa (oculto en modo escritorio) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1001;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--blanco);
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* quienes somos */
+.quienes {
+  padding: 60px;
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+.quienes h2 {
+  color: var(--dorado);
+  margin-bottom: 20px;
+}
+
+
+
+/* responsive para celulares */
+@media (max-width: 768px) {
+
+  /*se muestra el menú de hamburguesa en la navbar*/
+  .nav-toggle {
+    display: block;
+  }
+
+  .menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--negro);
+    padding: 80px 20px 20px 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    transform: translateY(-110%);
+    transition: transform 0.4s ease-out;
+    z-index: 1000;
+  }
+
+  .menu.active {
+    transform: translateY(0);
+  }
+
+  .nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+  }
+
+  .nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+  }
+
+  /* secciones para el celular */
+  .quienes {
+    padding: 40px 20px;
+  }
+}
+
+/* diseño responsive para celulares mas pequeños*/
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .logo-img {
+    width: 32px;
+  }
+}
+
+
+.site-footer {
+    background-color: var(--negro);
+    padding: 40px 0;
+    border-top: 2px solid var(--dorado);
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 180px;
+}
+
+.footer-column h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color: var(--dorado);
+}
+
+.footer-column ul {
+    padding: 0;
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-column ul li a {
+    color: var(--blanco);
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    color: var(--blanco);
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--dorado);
+}
+
+.payment-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.payment-icons img {
+    height: 25px;
+    filter: grayscale(100%);
+    transition: filter 0.3s;
+}
+
+.payment-icons img:hover {
+    filter: none;
+}
+
+.contact-info li {
+    display: flex;
+    align-items: center;
+}
+
+.contact-info li i {
+    margin-right: 10px;
+    color: var(--dorado);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+/* media queries para footer*/
+@media (max-width: 600px) {
+    .footer-container {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .footer-column {
+        min-width: 100%;
+        text-align: center;
+    }
+
+    .social-icons,
+    .payment-icons {
+        justify-content: center;
+    }
+}
+
+.quienes {
+  padding: 60px;
+  text-align: center;
+  max-width: 1200px; /* aumentamos el ancho máximo para el grid */
+  margin: auto;
+}
+
+.quienes h2 {
+  color: var(--dorado);
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+/* contenedor de grid para las tarjetas */
+.quienes-grid {
+  display: grid;
+  /* el diseño de la cuadrícula será 2 columnas para pantallas grandes */
+  grid-template-columns: 1.5fr 1fr 1fr; 
+  gap: 30px;
+  margin-bottom: 40px;
+  align-items: stretch;
+}
+
+/* estilo base para todas las tarjetas */
+.card {
+  background-color: #0d3663; /* azul ligeramente más claro que el fondo */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* transición para el hover */
+  height: 100%; /* asegura que las tarjetas se estiren a la misma altura */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* efecto hover la tarjeta se eleva y el color dorado aparece en el borde */
+.card:hover {
+  transform: translateY(-5px); /* se mueve ligeramente hacia arriba */
+  box-shadow: 0 8px 25px var(--dorado), 0 0 10px var(--dorado); /* efecto de brillo dorado */
+}
+
+.card h3 {
+  color: var(--blanco);
+  font-size: 1.2rem;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  flex-grow: 1; /* permite que el párrafo ocupe el espacio restante */
+}
+
+/* iconos de las tarjetas de misión y compromiso */
+.card i {
+  color: var(--dorado);
+  margin-bottom: 10px;
+}
+
+/* estilo para la tarjeta principal (que ocupa más espacio en escritorio) */
+.card-principal {
+  grid-column: span 1; /* por defecto ocupa 1 columna */
+  text-align: left;
+  border-left: 5px solid var(--dorado);
+}
+.card-principal h3 {
+    font-size: 1.5rem;
+    color: var(--dorado);
+}
+
+/* estilo para el párrafo adicional */
+.parrafo-equipo {
+  text-align: left;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.parrafo-equipo h3 {
+  color: var(--dorado);
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+  border-bottom: 2px solid var(--dorado);
+  padding-bottom: 5px;
+}
+
+.parrafo-equipo p {
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+/* responsive para celulares y tablets */
+@media (max-width: 992px) {
+  /* en pantallas medianas (tablets), la cuadrícula pasa a 2 columnas */
+  .quienes-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 0 20px;
+  }
+  
+  .card-principal {
+    grid-column: span 2; /* la principal ocupa las 2 columnas */
+    text-align: center;
+  }
+  .card-principal h3 {
+    text-align: center;
+    font-size: 1.3rem;
+  }
+
+  .quienes h2 {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  /* en móviles, la cuadrícula pasa a una sola columna */
+  .quienes-grid {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+  
+  .card-principal {
+    grid-column: span 1; /* ocupa 1 columna */
+  }
+
+  .card {
+    padding: 25px;
+  }
+}

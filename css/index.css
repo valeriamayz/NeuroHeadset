@@ -1,0 +1,502 @@
+/* colores principales */
+:root {
+  --azul-marino: #001F3F;
+  --dorado: #D4AF37;
+  --negro: #000000;
+  --blanco: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--azul-marino);
+  color: var(--blanco);
+}
+
+/*boton general*/
+.btn {
+  display: inline-block;
+  background: var(--dorado);
+  color: var(--negro);
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: #f5d76e;
+  transform: scale(1.05);
+}
+
+
+/*navbar*/
+.navbar {
+  background-color: var(--negro);
+  color: var(--blanco);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--dorado);
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.logo-img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  padding: 8px 14px;
+  border-radius: 4px;
+}
+
+.menu a:hover {
+  background: var(--dorado);
+  color: var(--negro);
+}
+
+/* botón de hamburguesa (oculto en modo escritorio) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1001;
+  /* esto hace que esté por encima del menú */
+}
+
+.nav-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--blanco);
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* inicio */
+.home {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 80px 40px;
+  min-height: 88vh;
+  background: linear-gradient(135deg, var(--azul-marino), #000814);
+  color: var(--blanco);
+  gap: 20px;
+}
+
+/* contenedor del botón para centrar en celular */
+.btn-container {
+  margin-top: 20px;
+}
+
+.hero-img {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-img img {
+  max-width: 100%;
+  width: 380px;
+  height: auto;
+  filter: drop-shadow(0px 0px 30px var(--dorado));
+  transition: 0.3s;
+}
+
+.hero-img img:hover {
+  transform: scale(1.05);
+}
+
+/* diseño responsive para tablets (INDEX) */
+@media (max-width: 1024px) {
+  .home {
+    padding: 60px 40px;
+  }
+
+  .hero-img img {
+    width: 300px;
+  }
+}
+
+/* responsive para celulares */
+@media (max-width: 768px) {
+
+  /*se muestra el menú de hamburguesa en la navbar*/
+  .nav-toggle {
+    display: block;
+    /* se muestra el botón de hamburguesa */
+  }
+
+  .menu {
+    /*oculta el menú y lo posiciona */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--negro);
+    padding: 80px 20px 20px 20px;
+    /* usamos padding para dejar espacio al logo */
+
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+
+    /* usamos esta animación para ocultar o mostrar */
+    transform: translateY(-110%);
+    transition: transform 0.4s ease-out;
+    z-index: 1000;
+  }
+
+  .menu.active {
+    transform: translateY(0);
+    /* se muestra el menú */
+  }
+
+  /* esta es la animación del botón de hamburguesa  */
+  .nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+  }
+
+  .nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+  }
+
+  /* el inicio para celulares*/
+  .home {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .hero-content p {
+    margin: 0 auto 25px auto;
+    max-width: 100%;
+  }
+
+  .hero-img img {
+    width: 250px;
+    margin-top: 20px;
+  }
+
+}
+
+/* diseño responsive para celulares mas pequeños*/
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .logo-img {
+    width: 32px;
+  }
+}
+
+.site-footer {
+    background-color: var(--negro);
+    padding: 40px 0;
+    border-top: 2px solid var(--dorado);
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 180px;
+}
+
+.footer-column h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color: var(--dorado);
+}
+
+.footer-column ul {
+    padding: 0;
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-column ul li a {
+    color: var(--blanco);
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    color: var(--blanco);
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--dorado);
+}
+
+.payment-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.payment-icons img {
+    height: 25px;
+    filter: grayscale(100%);
+    transition: filter 0.3s;
+}
+
+.payment-icons img:hover {
+    filter: none;
+}
+
+.contact-info li {
+    display: flex;
+    align-items: center;
+}
+
+.contact-info li i {
+    margin-right: 10px;
+    color: var(--dorado);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+/* media queries para footer*/
+@media (max-width: 600px) {
+    .footer-container {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .footer-column {
+        min-width: 100%;
+        text-align: center;
+    }
+
+    .social-icons,
+    .payment-icons {
+        justify-content: center;
+    }
+}
+
+.carousel-section {
+  padding: 50px 40px;
+  text-align: center;
+  background: #001A35; /* color de fondo ligeramente más oscuro */
+}
+
+.carousel-section h2 {
+  font-size: clamp(1.8rem, 4vw + 1rem, 2.5rem);
+  color: var(--dorado);
+  margin-bottom: 30px;
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 900px; 
+  height: 450px; /* altura fija para el carrusel en desktop */
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.carousel-slide {
+  display: flex;
+  width: 400%; /* 100% por cada una de las 4 imágenes */
+  height: 100%; 
+  transition: transform 0.6s ease-in-out;
+}
+
+.carousel-item {
+  width: 25%; /* 100% / 4 imágenes = 25% cada una */
+  flex-shrink: 0;
+  height: 100%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  position: relative; /* esto es crucial  para posicionar el caption */
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%; 
+  display: block;
+  object-fit: cover; /* asegura que la imagen llene el espacio horizontal */
+}
+
+
+
+.carousel-caption {
+  position: absolute;
+  top: auto;
+  bottom: 0; /* pegado a la parte inferior */
+  left: 0; /* pegado a la izquierda */
+  right: auto;
+  transform: none; /*desactiva el centrado */
+
+  max-width: 40%; /* ancho controlado */
+  min-width: 250px; 
+  padding: 15px 25px; 
+  border-radius: 0 8px 0 0; /* solo la esquina superior derecha redondeada */
+
+  background-color: rgba(0, 0, 0, 0.6); /* fondo semi-transparente y discreto */
+  color: var(--blanco);
+  text-align: left; /* alineamos el texto a la izquierda */
+  z-index: 5;
+}
+
+.carousel-caption h3 {
+  margin: 0 0 10px 0; 
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem); 
+  color: var(--dorado);
+  text-shadow: none; 
+}
+
+/* estilo para el botón dentro del carrusel */
+.carousel-caption .btn-caption {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    display: inline-block; 
+}
+
+/* flechas de Navegación */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--dorado);
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.3s;
+}
+
+.carousel-btn:hover {
+  background-color: var(--dorado);
+  color: var(--negro);
+}
+
+.carousel-btn.prev {
+  left: 15px;
+}
+
+.carousel-btn.next {
+  right: 15px;
+}
+
+/* responsive del Carrusel  */
+@media (max-width: 768px) {
+  .carousel-section {
+    padding: 40px 20px;
+  }
+
+  .carousel-container {
+    height: 300px; /* altura ajustada para móviles */
+  }
+
+  .carousel-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1.1rem;
+  }
+
+  .carousel-btn.prev {
+    left: 10px;
+  }
+
+  .carousel-btn.next {
+    right: 10px;
+  }
+  
+  /* responsive del Caption en tablets */
+  .carousel-caption {
+    max-width: 60%; 
+    min-width: 180px;
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* responsive del caption en móviles pequeños */
+  .carousel-caption {
+    max-width: 100%; /* ocupa todo el ancho inferior */
+    min-width: auto;
+    border-radius: 0; 
+  }
+  .carousel-caption h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  .carousel-caption .btn-caption {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+}
+

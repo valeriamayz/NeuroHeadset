@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito - Kronos Technology</title>
+  <link rel="stylesheet" href="css/carrito.css">
+  <link rel="icon" href="./img/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="img/logo.png" alt="Logo KronosTech" class="logo-img">
+        KronosTech
+      </div>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="menu" id="nav-menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="quienes.html">Quiénes Somos</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="carrito.html">Carrito (<span id="contador-carrito">0</span>)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Tu Carrito de Compras</h1>
+
+    <div class="carrito-productos-container" id="carrito-container">
+      </div>
+
+    <section class="carrito-resumen" id="carrito-resumen-section" style="display:none;">
+      <h2>Resumen de Compra</h2>
+      <p>Total a pagar: <span id="carrito-total">$0</span></p>
+      <button id="iniciar-compra-btn" class="btn-primary">Proceder al Pago de ${productos.length} items</button>
+    </section>
+
+    <div id="pago-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Finalizar Compra</h2>
+        <div id="productos-a-comprar">
+          </div>
+        <form id="formulario-pago">
+          <label for="nombre-pago">Nombre y Apellido:</label>
+          <input type="text" id="nombre-pago" name="nombre-pago" required>
+
+          <label for="documento">Documento de Identidad (DNI/Pasaporte):</label>
+          <input type="text" id="documento" name="documento" required>
+
+          <label for="tarjeta">Número de Tarjeta:</label>
+          <input type="text" id="tarjeta" name="tarjeta" required pattern="\d{16}" title="Debe tener 16 dígitos.">
+          
+          <button type="submit" class="btn-primary">Confirmar Compra Total</button>
+        </form>
+        <p id="mensaje-compra-exito" style="color: green; font-weight: bold; margin-top: 15px; display:none;">¡Tu compra fue realizada con éxito!</p>
+      </div>
+    </div>
+
+    <p id="carrito-vacio-msg" style="text-align: center; font-size: 1.2rem; margin-top: 50px; display: none;">Tu carrito está vacío. ¡Explora nuestro <a href="catalogo.html" style="color: var(--dorado); text-decoration: underline;">catálogo</a>!</p>
+
+  </main>
+
+
+
+  <footer class="site-footer">
+    <div class="footer-container">
+
+      <div class="footer-column">
+        <h3 data-key="footer-media">Redes Sociales</h3>
+        <div class="social-icons">
+          <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok">
+            <i class="fab fa-tiktok"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h3 data-key="footer-payments">Medios de Pago</h3>
+        <div class="payment-icons">
+          <img src="img/americanexpress-logo.png" alt="American Express">
+          <img src="img/visa-logo.png" alt="Visa">
+          <img src="img/mastercard-logo.webp" alt="Mastercard">
+          <img src="img/mercadopago-logo.png" alt="Mercado Pago">
+        </div>
+      </div>
+
+
+      <div class="footer-column">
+        <h3 data-key="footer-contact">Contactanos</h3>
+        <ul class="contact-info">
+          <li><i class="fas fa-phone"></i> 54 9 11 0000-0000</li>
+          <li><i class="fas fa-envelope"></i> info@kronostech.com</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Kronos Technology. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="./js/script.js"></script>
+  <script src="./js/carrito.js"></script>
+</body>
+
+</html>
